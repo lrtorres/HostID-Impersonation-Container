@@ -1,4 +1,5 @@
-Spoof Container.
+HostID Impersonation Container for FlexLM.
+================
 
 This container is useful when moving a FlexLM to a new server is
 desired without having to re-register the new host.
