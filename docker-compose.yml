@@ -1,0 +1,23 @@
+# Flexlm
+version: '2'
+services:
+  flexlm:
+    build: .
+    volumes:
+      - /server/app/maple14:/server/app/maple14
+    ports:
+      - "27001:27001"
+      - "33878:33878"
+      - "51125:51125"
+    restart: always
+    # This is the mac address of the physical
+    # host that the license was purchased under.
+    # The container will advertise to the license
+    # provider using this information.
+    mac_address: 00:00:00:00:00:00
+    hostname: spoofhost.domain.com
+    container_name: flexlm
+    logging:
+      driver: syslog
+      options:
+        syslog-facility: "local7"
